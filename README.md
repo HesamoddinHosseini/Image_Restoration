@@ -73,6 +73,9 @@ In this mini-project, we will strengthen the edges for a number of gray images (
 	
  حاصل تاری هر تصویر با تابع تاری تصویر دیگر با هم تقریباً برابر است:
 
+ <img width="609" alt="Screen Shot 2023-07-28 at 12 52 59 am" src="https://github.com/HesamoddinHosseini/Image_Restoration/assets/89314766/78bbb673-d085-4194-886c-dfea4974b1e8">
+
+
 انحراف معیار نویز اضافه شده به تصاویر 0.001 است.
 
  روشی را به اختیار بررسی نمایید.
