@@ -1,5 +1,5 @@
 
-# Image_Restoration, Min-Project 4
+# Digital Image Processing (DIP),Image_Restoration, Min-Project 4
 
 # English
 
