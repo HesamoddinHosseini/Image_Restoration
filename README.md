@@ -41,6 +41,8 @@ In the first stage of this mini-project, we will repair the image that is linear
 In the second stage of this mini project, we have images that are defocused. With the help of two existing images, we try to estimate the blurring functions and then obtain the deblurred image.
 We use Matlab to implement this project.
 
+Hesamoddin
+
 
 # Persian:
 سوال)
