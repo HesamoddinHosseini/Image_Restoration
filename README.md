@@ -5,48 +5,42 @@
 
 Question)
 
-1- Using an average 3 × 3 smoothing filter of Box Filter type, apply unsharp masking to the Im132 image.
+Usually, in the imaging process, the image may be blurred for various reasons. Blur may be due to camera movement, object movement, defocus, atmospheric conditions or other factors. In MATLAB, there is a function called fspecial that models some of these functions. Studying the features of this command can better introduce the types of these functions.
 
-2- Implement unsharp masking with Weighted Average of 3*3 average and compare the result with the previous result.
+a) motion blur:
 
-3-vRepeat the experience of part (1) with larger filters of 5 × 5, 7 × 7 and 9 × 9. What is the effect of enlarging the filter on the result? Discuss it.
+1- The Im401 image is blurred with a linear blurring function k of unknown length x and the Im402 image is obtained. Estimate the blurring function using the Im401 image and calculating the reconstruction error.
 
-4- What is the result if we use the median filter as a smoothing filter in unsharp masking?
+2- If you do not have the Im401 image and only have the Im402 blurred image, you are faced with two unknowns: the blurring function and the original image. In fact, you are now faced with blind image deconvolution. In this case, what do you suggest to estimate the blur function k? Implement your suggestion and report the result.
 
-5- 1/16 Consider the following stereotype as Laplacein stereotype:
+B- Defocused blur
 
-<img width="135" alt="Screen Shot 2022-02-18 at 11 46 51 am" src="https://user-images.githubusercontent.com/89314766/154644646-49b48aef-526f-4e0d-bcd7-8bf87c3b64fc.png">
+In each imaging system, a focal length is defined, and points of the scene that have different distances from the camera are defocused. The defocus blur function can be described by the pillbox function, which can be described by a single parameter of the blur radius.
 
-Using this cliché, the following relation can sharpen the image:
+1- Im403 and Im404 images are blurred Im401 with two defocus functions with different radii (consider the range of radii that can be checked from 2 to 8). Assume that the Im401 image is not available. Try to estimate blurring functions with the help of two existing images and then get the deblurred image.
 
-<img width="254" alt="Screen Shot 2022-02-18 at 11 47 15 am" src="https://user-images.githubusercontent.com/89314766/154644835-d7501f27-a0ea-45e9-9cf5-1d9fc2419ef2.png">
+Approaches that can be investigated:
 
-The above stereotype can be considered 1/16 of the total stereotypes
+o The principle of reconstruction of both images becomes a single image.
 
-<img width="735" alt="Screen Shot 2022-02-18 at 11 50 56 am" src="https://user-images.githubusercontent.com/89314766/154645067-6372a3a3-4357-4ea4-9276-afe23e90f39f.png">
+o The blur result of each image is almost equal to the blur function of the other image:
 
-According to these clichés, an adaptive sharpening can be implemented in such a way that we apply all these clichés to any point of the source image and add the result of all filters that are larger than a threshold. Finally, we add the result to the main image.
-Accordingly, apply the image sharpening in both non-horizontal and adaptive shapes to the images Im132 to Im134 and compare the result.
+ <img width="609" alt="Screen Shot 2023-07-28 at 12 52 59 am" src="https://github.com/HesamoddinHosseini/Image_Restoration/assets/89314766/78bbb673-d085-4194-886c-dfea4974b1e8">
 
-IM132:
+ The standard deviation of the noise added to the images is 0.001.
 
-![Im132](https://user-images.githubusercontent.com/89314766/154647298-5d1422cd-7c30-4edf-9084-1ad4d2384273.png)
+ o Check the method at your disposal.
 
-
-IM133:
-
-![Im133](https://user-images.githubusercontent.com/89314766/154647414-ab6cd126-2a13-4953-b35f-725c4d43161d.png)
-
-
-IM134:
-
-![Im134](https://user-images.githubusercontent.com/89314766/154647530-135474bb-56a1-48af-8c51-818e20eff75a.png)
-
-
+ Note: In the above exercise, you can use the fspecial function first for convenience. But finally, you have to design a function named myFspecial that creates the blur functions designed in this exercise.
+ 
 
 Abstract)
 
-In this mini-project, we will strengthen the edges for a number of gray images (grayscale) by using a suitable Box Filter. For this purpose, two unsharp masking algorithms and Laplacein have been used. In the unsharp masking algorithm, simple mean smoothing filter methods, weighted mean smoothing filter and medium filter with sizes such as 3 × 3, 5 × 5, 7 × 7 and 9*9*9 are used. In the Laplacein method, we try to sharpen the edges of three grayscale images in two ways: non-conformity with one stereotype and conformity with eight stereotypes. We use Matlab to implement this project.
+Usually, in the imaging process, the image may be blurred for various reasons. Blur may be due to camera movement, object movement, defocus, atmospheric conditions or other factors. Usually, the blur caused by the movement of the object during imaging is defined by two parameters: length and movement angle. If there is only the possibility of movement in the vertical or horizontal direction, the only parameter describing the movement is its size and direction. In each imaging system, a focal length is defined, and points of the scene that have different distances from the camera are defocused.
+In the first stage of this mini-project, we will repair the image that is linearly blurred due to motion and get an estimate of its damaged function. We restore this operation once considering the original image and once assuming that we do not have the original image.
+In the second stage of this mini project, we have images that are defocused. With the help of two existing images, we try to estimate the blurring functions and then obtain the deblurred image.
+We use Matlab to implement this project.
+
 
 # Persian:
 سوال)
